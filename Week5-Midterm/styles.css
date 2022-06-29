@@ -16,13 +16,12 @@ body {
   }
   header {
     margin-top: 0;
-    padding: 3em 1em 2em 1em;
+    padding: 1em 1em 2em 1em;
     text-align: center;
     background-image: url(images/headerBG.jpg);
     background-position: center top;
     background-repeat: no-repeat;
-    background-size: 100% 100%;  
-  
+    background-size: 50em, 50em;  
   
   }
   
@@ -48,6 +47,7 @@ body {
     color: #ff00ff;
     background-color: white;
   }
+
   .title{
     font: bold 3em Staatliches,Georgia serif;
     text-shadow: .5em .5em .5em whitesmoke;
@@ -56,15 +56,15 @@ body {
   h1 {
     font: bold 1.5em Georgia, serif;
     text-shadow: .1em .1em .2em gray;
-    color: #939;
+    color: #41521F;
   }
   h2 {
     font-size: 1em;
     text-transform: uppercase;
-    letter-spacing: .5em;
-    text-align: center;
-    color:rgb(13, 55, 30)
+    text-align: left;
+    color: goldenrod
   }
+
   dt {
     font-weight: bold;
   }
@@ -72,7 +72,7 @@ body {
     font-style: italic;
   }
   ul {
-      list-style-type: none;
+      list-style-type: circle;
       margin: 0;
       padding: 0;
   }
