@@ -2,16 +2,8 @@ body {
     font-family: Georgia, serif;
     font-size: 100%;
     line-height: 175%;
-    margin: 0 15% 0;
-   /* background-color: #d2dc9d;*/
-   /* background-image: url(images/bullseye.png);
-    background-position: center 200px; */
-    /*background-image: url(images/blackgoose.png);
-    background-position: center 100px;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    */
-    background: #EBF1E4  no-repeat center 100px fixed;
+    background: #EBF1E4  
+
   
   }
   header {
@@ -20,10 +12,8 @@ body {
     text-align: center;
     background-image: url(images/headerBG.jpg);
     background-position: center top;
-    background-repeat: no-repeat;
-    background-size: 100%,100%;
-    /*background-size: 50em, 50em; */ 
-  
+    background-repeat:no-repeat;
+    background-size:100%,50%;  
   }
   
   a {
@@ -32,21 +22,16 @@ body {
   }
   a:link
   {
-    color: #939;
+    color: #04395E;
   }
   a:visited
   {
-    color: #937393;
+    color: #5496a7;
   }
-  a:hover,a:focus
-  {
-    color: #c700f2;
-    background-color: #fff;
-  }
+ 
   a:active
   {
-    color: #ff00ff;
-    background-color: white;
+    color: #D5896F;
   }
 
   .title{
@@ -60,7 +45,7 @@ body {
     color: #41521F;
   }
   h2 {
-    font-size: 1em;
+    font-size: 1.5em;
     text-transform: uppercase;
     text-align: left;
     color: goldenrod
@@ -71,12 +56,18 @@ body {
    
     font-family: "Marco One",Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
   }
-  h3.Winter
+  .Winter
   {
+    font-size: 1.25em;
+   
+    font-family: "Marco One",Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     color: #04395E;
   }
-  h3.Summer
+  .Summer
   {
+    font-size: 1.25em;
+   
+    font-family: "Marco One",Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     color: #D5896F;
   }
   ul {
@@ -84,18 +75,16 @@ body {
       margin:25px;
       padding: 0;
   }
-  #info p {
+
+  .footer{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: small;
     font-style: italic;
   }
-  p.warning, sup {
-    font-size: small;
-  }
-  .label {
-    font-weight: bold;
-    font-variant: small-caps;
-    font-style: normal;
-  }
- /* The side navigation menu */
+
+
+ /* The side navigation menu
+ from https://www.w3schools.com/howto/howto_css_sidebar_responsive.asp*/
 .sidebar {
   margin: 0;
   padding: 0;
