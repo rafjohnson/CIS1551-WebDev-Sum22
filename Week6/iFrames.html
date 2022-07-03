@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+        <title>My Iframe page</title>
+        <style>
+            /*acquired from https://stackoverflow.com/questions/17217766/two-divs-side-by-side-fluid-display*/
+            iframe, .video 
+            {
+            width: 690px;
+            height: 388px; /*value from youtube embed code*/
+            background: red;
+            float: left;
+            margin-right: 15px;
+            }
+
+            .info 
+            {
+            margin-left: 15%;
+            height: auto;
+            }
+           
+            h2
+            {
+                text-align: center;
+            }
+
+        </style>
+	</head>
+	<body>
+		<section class="container">
+            <div class="video">
+                <iframe  src="https://www.youtube.com/embed/5kFXq06KveY" title="[1452] Help Me Identify This Bizarre Lock" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+            <div class="info">
+               
+                <h2>Lock Picking Lawyer</h2>
+                <p>An interesting video displaying a strange lock LPL received, seemingly with some automatic timer.</p>
+                <p><a href="https://www.youtube.com/watch?v=5kFXq06KveY">Source URL</a></p>
+
+            </div>
+          </section>
+	</body>
+</html>
