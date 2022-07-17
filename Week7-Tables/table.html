@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+		<title>Table Challenge</title>
+        <style>
+            td,th{
+                
+                background: whitesmoke;
+            }
+            .ex8-1 td{
+                /*I'm so sorry */
+               border:  3px solid purple;
+               background-color: aquamarine;
+            }
+            .ex8-1 th{
+                
+                border:  3px solid purple;
+                background-color: aquamarine;
+             }
+           
+            table{
+                
+                background-origin: border-box;
+                border-spacing: 5px;
+            }
+            table.ex8-1 {
+                
+                border-color: orange;
+                border-width: 5px;      
+                border-style: groove;
+                background-color: lightcyan;          
+            }
+            
+            table.ex8-2{
+                /*having fun here, you said no grey borders :D */
+                /*borrowed from here: https://stackoverflow.com/questions/31418826/table-with-gradient-borders-and-cell-gradient-borders */
+
+                background-color: #ff1493;
+                background-image: linear-gradient(319deg, #ff1493 0%, #0000ff 37%, #ff8c00 100%);
+            }
+            table.ex8-3{
+                background-color: red;
+                background-image: linear-gradient(red,orange, yellow, green, cyan, blue, violet);
+            }
+            table.ex8-4
+            {
+                background-color: aqua;
+                background-image: radial-gradient(red,orange,yellow,green,blue,purple);
+
+            }
+           
+        </style>
+	</head>
+	<body>
+        <h2>Exercise 8-1</h2>
+		<table class="ex8-1">
+            <tr>
+                <th>Album</th><th>Year</th>
+            <tr>
+                <td>Rubber Soul</td><td>1965</td>
+            </tr>
+            <tr>
+                <td>Revolver</td><td>1966</td>
+            </tr>
+            <tr>
+                <td>Sgt. Pepper's</td><td>1967</td>
+            </tr>
+            <tr>
+                <td>The White Album</td><td>1968</td>
+            </tr>
+            <tr>
+                <td>Abbey Road</td><td>1969</td>
+            </tr>
+        </table>
+        <br>
+        <h2>Exercise 8-2</h2> 
+        <table class="ex8-2"> 
+            <tr>
+                <th>7:00pm</th><th>7:30pm</th><th>8:00pm</th>
+            </tr>
+            <tr>
+                <td colspan="3">The Sunday Night Movie</td>
+            </tr>
+            <tr>
+                <td>Perry Mason</td><td>Candid Camera</td><td>What's My Line</td>
+            </tr>
+            <tr>
+                <td>Bonanza</td><td colspan="2">The Wackiest Ship in the Army</td>
+            </tr>
+        </table>
+        <br>
+        <h2>Exercise 8-3</h2>
+        <table class="ex8-3">
+            <tr>
+                <td>apples</td><td rowspan="3">oranges</td><td>pears</td>
+            </tr>
+            <tr>
+                <td>bananas</td><td rowspan="2">pineapple</td>
+            </tr>
+            <tr>
+                <td>lychees</td>
+            </tr>
+        </table>
+        <br>
+        <h2>Exercise 8-4</h2>
+        <table class="ex8-4">
+            <caption>Your Content Here</caption>
+            <colgroup></colgroup>
+            <colgroup span="3"></colgroup>
+            <tr>
+                <th rowspan="2"></th>
+                <th colspan="2">A common header for two subheads</th>
+                <th rowspan="2">Header 3</th>
+            </tr>
+            <tr>
+                <th>Header 1</th>
+                <th>Header 2</th>
+            </tr>
+            <tr>
+                <th scope="row">Thing A</th>
+                <td>data A1</td>
+                <td>data A2</td>
+                <td>data A3</td>
+            </tr>
+            <tr>
+                <th scope="row">Thing B</th>
+                <td>data B1</td>
+                <td>data B2</td>
+                <td>data B3</td>
+            </tr>
+            <tr>
+                <th scope="row">Thing C</th>
+                <td>data C1</td>
+                <td>data C2</td>
+                <td>data C3</td>
+            </tr>
+        </table>
+	</body>
+</html>
