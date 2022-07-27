@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+<!-- The starter page for the Javascript exercise
+Scripts can go both in the head and in the body, and there can be multiple scripts -->
+<meta charset ="UTF-8">
+<meta name = "description" content = "An intro to Javascript">
+<meta name ="keywords" content="Javascript, programming">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+	header
+	{
+		font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;	
+		text-align: center;
+		
+	}
+	button 
+	{
+		background-color: #008bab40;
+	}
+	textarea
+	{
+		background-color: antiquewhite;
+	}
+</style>
+<title>Million Dollar WebApp</title>
+</head>
+<body>
+	<header id="myheader"><h2>Million Dollar Webpage</h2></header>
+	
+	<div id="wholePage">
+		<button id="btnChangeColor">Change the header color!</button>
+		<hr>
+		<h3>What is your name?</h3>
+		<textarea id="inputName"></textarea>
+		<button id="btnGetName">Submit</button>
+	</div>
+
+
+	<script type="text/javascript">
+		var originalTitle = document.title;
+		showUnreadCount(3)
+		function showUnreadCount(unread)
+		{
+		 document.title = originalTitle+" (" + unread +"new messages!)";
+		}
+		//second part - change background colors when a button is pressed
+		var colors =  ["red", "orange","yellow", "green", "blue", "violet","white"];
+		var colorsEventListener = document.getElementById('btnChangeColor');
+		var i=0;//keep track of color we're on
+		colorsEventListener.addEventListener('click',function()
+		{
+			//change the colors
+			document.getElementById('myheader').style.backgroundColor=colors[i];
+			document.getElementById('myheader').style.backopacity=.5;
+			
+			//increment i, unless it's the length of colors
+			if(i<colors.length-1)
+			{
+				i++;
+			}
+			else{
+				i=0;				
+			}
+			document.getElementById('btnChangeColor').textContent="Change the header color to "+ colors[i] +"!";
+		}
+		);
+		
+		//greet the visitor
+		//setup the event listener
+		var nameEventListener = document.getElementById('btnGetName');
+		nameEventListener.addEventListener('click',function()
+		{
+			//get the value from the textbox
+			var name = document.getElementById('inputName').value;
+			//remove leading and trailing spaces
+			name = name.trim();
+			//update the header with the users name - allows for html "injections". Not for production code!
+
+			//check there was a value in the input name box
+			if(name !="")
+			{
+				document.getElementById('myheader').innerHTML = "<h2>Welcome to the Million Dollar Webpage, "+name+"!"+"</h2>"
+			}
+			else
+			{
+				document.getElementById('myheader').innerHTML = "<h2>Welcome to the Million Dollar Webpage, he who shall not be named!</h2>"
+			}
+		}
+		);
+		
+
+	</script>
+
+
+</body>
+</html>
