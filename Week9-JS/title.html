@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+<head>
+<!-- The starter page for the Javascript exercise
+Scripts can go both in the head and in the body, and there can be multiple scripts -->
+<meta charset ="UTF-8">
+<meta name = "description" content = "An intro to Javascript">
+<meta name ="keywords" content="Javascript, programming">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+	#myheader
+	{
+		font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;	
+		text-align: center;
+		background-color:white;
+		
+	}
+	body
+	{
+		background-color: white
+		
+	}
+	p{
+		background-color: white
+	}
+	h3{
+		background-color: white;
+	}
+	button 
+	{
+		background-color: #008bab40;
+	}
+	textarea
+	{
+		background-color: antiquewhite;
+	}
+</style>
+<title>Million Dollar WebApp</title>
+</head>
+<body>
+	<div id="myheader"><h2>It's the Million Dollar Webpage!</h2></div>
+	<p>Try clicking the button below to see what happens!</p>
+	
+	<div id="wholePage">
+		<button id="btnChangeColor">Change the header color!</button>
+		<hr>
+		<h3>What is your name?</h3>
+		<textarea id="inputName"></textarea>
+		<button id="btnGetName">Submit</button>
+	</div>
+
+	<div>
+		<p>
+			<small>Pssst. Try the Konami Code (&uarr;&uarr;&darr;&darr;&larr;&rarr;&larr;&rarr; b a b a). See what happens! Refresh the page to restore it back to normal. </small>
+		</p>
+	</div>
+
+	<script type="text/javascript">
+		var originalTitle = document.title;
+		showUnreadCount(3)
+		function showUnreadCount(unread)
+		{
+		 document.title = originalTitle+" (" + unread +"new messages!)";
+		}
+		//second part - change background colors when a button is pressed
+		var colors =  ["red", "orange","yellow", "green", "blue", "violet","white"];
+		var colorsEventListener = document.getElementById('btnChangeColor');
+		var i=0;//keep track of color we're on
+		colorsEventListener.addEventListener('click',function()
+		{
+			//change the colors
+			document.getElementById('myheader').style.backgroundColor=colors[i];
+			document.getElementById('myheader').style.backopacity=.5;
+			
+			//increment i, unless it's the length of colors
+			if(i<colors.length-1)
+			{
+				i++;
+			}
+			else{
+				i=0;				
+			}
+			document.getElementById('btnChangeColor').textContent="Change the header color to "+ colors[i] +"!";
+		}
+		);
+		
+		//greet the visitor
+		//setup the event listener
+		var nameEventListener = document.getElementById('btnGetName');
+		nameEventListener.addEventListener('click',function()
+		{
+			//get the value from the textbox
+			var name = document.getElementById('inputName').value;
+			//remove leading and trailing spaces
+			name = name.trim();
+			//update the header with the users name - allows for html "injections". Not for production code!
+
+			//check there was a value in the input name box
+			if (name == "Rebecca")
+			{
+				document.getElementById('myheader').innerHTML = "<h2>Welcome to the Million Dollar Webpage, my creator, "+name+"!"+" How can I be of service?</h2>"
+			}
+			else if(name !="")
+			{
+				document.getElementById('myheader').innerHTML = "<h2>Welcome to the Million Dollar Webpage, "+name+"!"+"</h2>"
+			}
+			else
+			{
+				document.getElementById('myheader').innerHTML = "<h2>Welcome to the Million Dollar Webpage, he who shall not be named!</h2>"
+			}
+		}
+		);
+		
+		//konami code
+		//https://gomakethings.com/how-to-create-a-konami-code-easter-egg-with-vanilla-js/	
+	
+		var pattern = ['ArrowUp', 'ArrowUp', 'ArrowDown', 'ArrowDown', 'ArrowLeft', 'ArrowRight', 'ArrowLeft', 'ArrowRight', 'b', 'a'];
+		var current = 0;		
+		var keyHandler = function (event) {
+			console.log(pattern.length);
+			console.log(current);
+			console.log(event.key);
+		// If the key isn't in the pattern, or isn't the current key in the pattern, reset
+		if (pattern.indexOf(event.key) < 0 || event.key !== pattern[current]) {
+			current = 0;
+			return;
+		}
+
+		// Update how much of the pattern is complete
+		current++;
+
+		// If complete, alert and reset
+		if (pattern.length === current) {
+			current = 0;
+			console.log("Set");
+			document.body.style.backgroundColor="silver";
+			document.body.style.backgroundImage="linear-gradient(335deg, #b00 23px, transparent 23px), linear-gradient(155deg, #d00 23px, transparent 23px), linear-gradient(335deg, #b00 23px, transparent 23px), linear-gradient(155deg, #d00 23px, transparent 23px)";
+			document.body.style.backgroundSize="58px 58px";
+			document.body.style.backgroundPosition="0px 2px, 4px 35px, 29px 31px, 34px 6px";
+
+			//and make the other things white transparent background so you can still see them header, p, h3 are all whitesmoke
+			//button is luigi green #00b33c
+			console.log("paras");
+
+			var ps = document.getElementsByTagName("p")
+			for (let i=0; i<ps.length;i++)
+			{
+				ps[i].style.backgroundColor="whitesmoke";	
+			}
+			
+
+			console.log("headers");
+			var h3s = document.getElementsByTagName("h3")
+			for (let i=0; i<h3s.length;i++)
+			{
+				h3s[i].style.backgroundColor="whitesmoke";
+			}
+			
+			console.log("buttons");
+			var bs = document.getElementsByTagName("button")
+			for (let i=0; i<bs.length;i++)
+			{
+				bs[i].style.backgroundColor="green";
+			}
+		
+		}
+
+		};
+		document.addEventListener('keydown', keyHandler, false);
+
+	</script>
+
+</body>
+</html>
