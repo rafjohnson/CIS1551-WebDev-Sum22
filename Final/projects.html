@@ -1,0 +1,80 @@
+<html>
+    
+    <button id="doThing" onclick="loadDoc()">doThing</button>
+    <div id="demo"></div>
+    <!--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-->
+
+    <!--scaffolding out table-->
+    <div id="githubTable">
+        <a href="github.com">text</a>
+</div>
+<script>
+function loadDoc()
+{
+    const xhttp = new XMLHttpRequest();
+
+    xhttp.onload=function(){
+        var response = this.responseText;
+        //parse json
+        var JObj = JSON.parse(response);
+        
+
+        //build table. 
+        
+        //create table open tag
+        var htmlTable = "";
+        htmlTable += "<table>";
+        //add table headers
+        htmlTable += "<tr><th>Project Name</th><th>Language</th><th>Created</th><th>Last Updated</th><th>Availability</th></tr>";
+        
+        //loop arournd the Jobj, adding rows.
+
+        
+        for(let i=0;i<JObj.length;i++)
+        {
+             //add tr tag
+            htmlTable +="<tr>";
+
+            //name - is also a link
+            htmlTable+="<td>";
+            var link = "<a target=\"blank\" href=\""+JObj[i]["html_url"]+"\"a>"+JObj[i]["name"]+"</a>";
+            htmlTable +=link;
+            htmlTable+="</td>";
+
+            //language
+            htmlTable+="<td>";
+            htmlTable+=JObj[i]["language"];
+            htmlTable+="</td>";
+
+            //created
+            htmlTable+="<td>";
+            htmlTable+=JObj[i]["created_at"];
+            htmlTable+="</td>";
+
+            //last updated
+            htmlTable+="<td>";
+            htmlTable+=JObj[i]["updated_at"];
+            htmlTable+="</td>";
+
+            //availability
+            htmlTable+="<td>";
+            htmlTable+=JObj[i]["visibility"];
+            htmlTable+="</td>";
+
+            //close tr
+            htmlTable +="</tr>";
+        }
+
+        //close tag
+        htmlTable += "</table>"
+
+        document.getElementById("githubTable").innerHTML=htmlTable;
+    }
+    xhttp.open("GET","https://api.github.com/users/rafjohnson/repos",true)
+    xhttp.setRequestHeader("accept","application/vnd.github+json");
+    xhttp.setRequestHeader("Authorization","token: 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");
+    xhttp.send();
+}
+</script>
+
+</html>
