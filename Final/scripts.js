@@ -1,3 +1,19 @@
+//all page load, all common onLoads. 
+function allPageLoad()
+{
+    fixFooterHeight();
+    getLastModified();
+
+}
+//any special page loads
+function ProjectPageLoad()
+{
+    allPageLoad();
+    loadGitHubTable();
+   
+}
+
+
 function loadGitHubTable()
 {
     const xhttp = new XMLHttpRequest();
@@ -44,7 +60,7 @@ function loadGitHubTable()
 
             //last updated
             htmlTable+="<td>";
-            var updatedDTStr = JObj[i]["updated_at"];
+            var updatedDTStr = JObj[i]["pushed_at"];
             var updatedDate = new Date(updatedDTStr);
             htmlTable+=updatedDate.toLocaleDateString("en-US");
             htmlTable+="</td>";
@@ -70,7 +86,26 @@ function loadGitHubTable()
 
 function getLastModified()
 {
-    var lastModified = Date(document.lastModified);
-    document.getElementById("lastModified").innerText=lastModified.toLocaleString();
+    //single place for the last modified date
+    var lastModified = "2022-08-09";
+    document.getElementById("lastModified").innerText=lastModified;
 
+}
+function fixFooterHeight()
+{
+    var sidebar= document.querySelector('.sidebar');
+    var content = document.querySelector('.content');
+    var sidebarHeight = sidebar.offsetHeight;
+    var contentHeight = content.offsetHeight;
+    if(contentHeight<sidebarHeight)
+    {
+        //make content height the same as sidebar height
+        //single content div, luckily, so shouldn't need to iterate, but we will anyways
+        var contents = document.getElementsByClassName("content");
+        for (var i=0; i<contents.length;i++ )
+        {
+            contents[i].style.height=sidebarHeight;
+        }
+
+    }
 }
