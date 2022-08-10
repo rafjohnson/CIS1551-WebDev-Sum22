@@ -7,21 +7,26 @@
         <title>Rebecca Johnson - Hobbies</title>
         <script type="text/javascript" src="scripts.js"></script>
         <style>
-            .rtFloatImg
-            {
-                float: right;
-                margin: 0 0 0 15px;
-
-            }
-            .ltFloatImg{
-                float: left;
-                margin:   0 15px 0 0;
-            }
+           img{
+            margin-bottom: 30px;
+           }
             .time{
                 font-weight: bold;
             }
             .code{
                 font-family: 'Courier New', Courier, monospace;
+            }
+            li.fish{
+                list-style-image: url("images/hook.png") ;
+                
+            }
+            .equipment{
+                margin-top: 30px;
+                vertical-align: bottom;
+               
+            }
+            p{
+                overflow: hidden;
             }
         </style>
     </head>
@@ -40,7 +45,7 @@
         </div>
         <div class="content" id="top">
            <p>I've got a few hobbies, notably fiber arts (knitting and sewing), and fishing. </p>
-           <p>Here are a few links that I've found useful for both of them. </p>
+           
 
            <h2>Knitting and Fiber Arts</h2>
            <ul>
@@ -53,15 +58,29 @@
            </ul>
 
            <h2>Fishing and Kayaking</h2>
-           <ul>
-            <li>
-                
-            </li>
-           </ul>
+           <p><img class="rtFloatImg" src="images/HoldingLargePike.jpg" height=auto width=300px />
+            I enjoy fishing off my kayak and on the ice. During the summer I target bass or walleye, and in the winter
+            it's all about the perch and pike. My kayak is fully kitted for fishing, and glides through the water easily.
+           </p>
 
+           <p> <img class="ltFloatImg" src="images/CalmWater.jpg" height=auto width=300px/> I particularly enjoy getting out on the water
+            early in the morning, when the water is calm and the sun isn't as strong.</p>
+            <div class="equipment">
+            <h3>Here's my list of equipment:</h3>
+                <p>
+                    <ul>
+                        <li class="fish">
+                            <a href="https://www.perceptionkayaks.com/us/kayaks/pescador-pro-120" target="_blank" >My Kayak: a Perception Pescador Pro 12 foot   </a>
+                        </li>
+                        <li class="fish">
+                            <a href="https://stcroixrods.com/products/bass-x-spinning-rods" target="_blank">St Croix Bass X spinning rod, 6' 10", fast response</a>
+                        </li>
+                    </ul>
+                </p>
+            </div>
         </div>
         <footer>
-            <p class="footer">&copy;2022, Rebecca A Johnson | Last Updated:  | <a href="#top">Back to top</a> </p>
+            <p class="footer">&copy;2022, Rebecca A Johnson | Last Updated: <span id="lastModified"></span>| <a href="#top">Back to top</a> </p>
         </footer>
  </body>
 
