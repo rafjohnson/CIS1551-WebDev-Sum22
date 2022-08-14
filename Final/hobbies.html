@@ -6,25 +6,23 @@
         <link rel="stylesheet" href="styles.css"/>
         <title>Rebecca Johnson - Hobbies</title>
         <script type="text/javascript" src="scripts.js"></script>
+        <link href="https://fonts.googleapis.com/css2?family=Lora&display=swap" rel="stylesheet">
         <style>
+            .section{
+                position: relative;
+            }
            img{
             margin-bottom: 30px;
            }
             .time{
                 font-weight: bold;
-            }
-            .code{
-                font-family: 'Courier New', Courier, monospace;
+            
             }
             li.fish{
                 list-style-image: url("images/hook.png") ;
                 
             }
-            .equipment{
-                margin-top: 30px;
-                vertical-align: bottom;
-               
-            }
+           
             p{
                 overflow: hidden;
             }
@@ -33,7 +31,7 @@
     <body onload="allPageLoad();">
         <a href="index.html">
             <header id="top">
-                <h1 class="title">My hobbies</h1>
+                <div class="title">Rebecca Johnson</div>
                 
             </header>
         </a>
@@ -41,32 +39,39 @@
             <a href="index.html">Home</a>
             <a class="active" href="hobbies.html">Hobbies</a>
             <a href="projects.html">Projects</a>
-            <a href="resume.html">About Me</a>
+            <a href="resume.html">About Me/Resume</a>
         </div>
         <div class="content" id="top">
-           <p>I've got a few hobbies, notably fiber arts (knitting and sewing), and fishing. </p>
+            <p>I've got a few hobbies, notably fiber arts (knitting and sewing), and fishing. </p>
            
+            <div class="section">
+         
+                <h2>Knitting and Fiber Arts</h2>
+               
+                <p>When I'm not fishing, I am almost always creating. I enjoy knitting, sewing, quilting, and spinning (making yarn).</p>
+                <p>
+                    <img class="ltFloatImg"  src="images/Amys Blanket.jpg" alt="Amy's Quilt" height="300px" width="auto"/>
+                I have been knitting for about 8 years so far, and I have made some impressive projects. My greatest project is a knitted king sized quilt
+                I made for my Sister-in-Law and her wife. It took me about 18 months, and is probably the greatest thing I'll ever make.
+                
+                </p>
+                <p>When I'm looking for new knitting patterns, I often go to <a href="https://www.ravelry.com/" target="_blank">ravelry.com</a>. Ravelry is an online pattern and 
+                project database with forums for collaboration and discussion.</p>
+            </div>
 
-           <h2>Knitting and Fiber Arts</h2>
-           <ul>
-            <li>
-                <a href="ravelry.com" targe="blank">ravelry.com</a> - a useful site to find knitting and crochet patterns, along
-                with a vibrant community of fiber artists discussing what they love. I can also save projects there and keep track 
-                of the yarn and supplies that I own. 
-            </li>
+            <div class="section">
+                <h2>Fishing and Kayaking</h2>
+                <p><img class="rtFloatImg" src="images/HoldingLargePike.jpg" height=auto width=300px />
+                I enjoy fishing off my kayak and on the ice. During the summer I target bass or walleye, and in the winter
+                it's all about the perch and pike. My kayak is fully kitted for fishing, and glides through the water easily.
+                </p>
 
-           </ul>
+                <p> <img class="ltFloatImg" src="images/CalmWater.jpg" height=auto width=300px/> I particularly enjoy getting out on the water
+                early in the morning, when the water is calm and the sun isn't as strong.</p>
+            </div>
 
-           <h2>Fishing and Kayaking</h2>
-           <p><img class="rtFloatImg" src="images/HoldingLargePike.jpg" height=auto width=300px />
-            I enjoy fishing off my kayak and on the ice. During the summer I target bass or walleye, and in the winter
-            it's all about the perch and pike. My kayak is fully kitted for fishing, and glides through the water easily.
-           </p>
-
-           <p> <img class="ltFloatImg" src="images/CalmWater.jpg" height=auto width=300px/> I particularly enjoy getting out on the water
-            early in the morning, when the water is calm and the sun isn't as strong.</p>
-            <div class="equipment">
-            <h3>Here's my list of equipment:</h3>
+            <div class="section">
+                <h3>Here's my list of equipment:</h3>
                 <p>
                     <ul>
                         <li class="fish">
@@ -75,12 +80,15 @@
                         <li class="fish">
                             <a href="https://stcroixrods.com/products/bass-x-spinning-rods" target="_blank">St Croix Bass X spinning rod, 6' 10", fast response</a>
                         </li>
+                        <li class="fish">
+                            <a href="https://www.amazon.com/Berkley-Trilene-Monofilament-Fishing-Line/dp/B08YFM7QVH" target="_blank">Trilene Mono Line</a>
+                        </li>
                     </ul>
                 </p>
             </div>
         </div>
         <footer>
-            <p class="footer">&copy;2022, Rebecca A Johnson | Last Updated: <span id="lastModified"></span>| <a href="#top">Back to top</a> </p>
+            <p class="footer">&copy;2022, Rebecca A Johnson | Last Updated: <span id="lastModified"></span>| <a href="#top">Back to top</a> | <a href = "mailto:rafavreau@gmail.com">Email Me!</a> </p>
         </footer>
  </body>
 
